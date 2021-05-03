@@ -1,10 +1,11 @@
 import React from 'react'
+import Layout from '../components/Layout/Layout'
 
 const Details = () => {
     return (
-        <div>
-            Details
-        </div>
+        <Layout>
+            <div>jaskdjkasdj</div>
+        </Layout>
     )
 }
 

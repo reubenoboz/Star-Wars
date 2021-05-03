@@ -37,14 +37,22 @@
       font-size: 1.2rem;
       color: $text_grey;
       line-height: 1.6rem;
+      @include small-screens{
+        font-size: 1.5rem;
+        width: 70%
+      }
     }
     .search {
       width: 50%;
+      @include small-screens{
+        width: 85%;
+      }
       .search_input {
         width: 90%;
         padding: 1rem 2rem;
         float: left;
         border: none;
+        color: $text_black
       }
       .search_btn {
         float: left;

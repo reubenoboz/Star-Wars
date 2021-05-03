@@ -23,6 +23,7 @@ const PlanetsHome = () => {
   const hasPrev = useSelector((state) => state.PlanetsReducer.hasPrev);
   const page = useSelector((state) => state.PlanetsReducer.page);
   const count = useSelector((state) => state.PlanetsReducer.count);
+  const filterTerm = useSelector((state) => state.GeneralReducer.filterTerm); //fetch filter term from redux
 
   const getPlanets = async (pageNumber = 1) => {
     dispatch(togglePlanetsLoading);
@@ -52,6 +53,7 @@ const PlanetsHome = () => {
           Planets={Planets}
           getRandomNumber={getRandomNumber}
           isLoadingPlanets={isLoadingPlanets}
+          filterTerm={filterTerm}
         />
 
         {planets.length !== 0 && (

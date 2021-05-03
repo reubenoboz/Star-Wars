@@ -12,6 +12,7 @@ import { getRandomNumber } from "../utils/functions";
 import Button from "../components/Button/Button";
 import "./Characters.scss";
 import PopularCharacters from "./HomeComponents/PopularCharacters";
+import { handleGenderFilter } from "../Redux/actions/GeneralAction";
 
 const CharactersHome = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,8 @@ const CharactersHome = () => {
   const hasPrev = useSelector((state) => state.CharacterReducer.hasPrev);
   const page = useSelector((state) => state.CharacterReducer.page);
   const count = useSelector((state) => state.CharacterReducer.count);
+  const filterTerm = useSelector((state) => state.GeneralReducer.filterTerm);  //fetch filter term from redux
+  const genderTerm = useSelector((state) => state.GeneralReducer.genderTerm);  //fetch gender filter term from redux
 
   const getCharacters = async (pageNumber = 1) => {
     dispatch(toggleCharacterLoading());
@@ -40,6 +43,10 @@ const CharactersHome = () => {
     getCharacters();
   }, []);
 
+  const handleGenderChange = (e) => {
+    dispatch(handleGenderFilter(e.target.value))
+  }
+
   return (
     <Layout>
       <div className="characters">
@@ -50,11 +57,11 @@ const CharactersHome = () => {
         <div className="filter_container my-3">
           <div className="filter">
             <label className="mr-1">FILTER:</label>
-            <select className="px-2">
+            <select onChange={handleGenderChange} className="px-2">
               <option value="">None</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="robot">Robot</option>
+              <option value="n/a">Robot</option>
             </select>
           </div>
           <div className="view ml-3">
@@ -71,6 +78,8 @@ const CharactersHome = () => {
           Characters={Characters}
           getRandomNumber={getRandomNumber}
           isLoadingCharacters={isLoadingCharacters}
+          filterTerm={filterTerm}
+          genderTerm={genderTerm}
         />
 
         {characters.length !== 0 && (

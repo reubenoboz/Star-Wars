@@ -1,16 +1,26 @@
 @import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
 
 .character_card {
     display: flex;
+    @include small-screens{
+      display: block;
+    }
   .character_image {
     width: 65%;
     height: 20rem;
     object-fit: cover;
+    @include small-screens{
+      width: 100%;
+    }
   }
 
   .character_card_details {
     padding: 3rem 1rem 3rem 1rem;
     width: 35%;
+    @include small-screens{
+      width: 100%;
+    }
     .character_title {
       font-weight: bold;
       color: $text_black;

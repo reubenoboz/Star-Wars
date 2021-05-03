@@ -11,6 +11,9 @@
 }
 
 .btn-primary {
+  @include small-screens {
+    width: 20rem
+  }
   @include box($border: 1px solid $btn_primary, $radius: 0);
   // @include box-shadow(3px 8px 10px 0px rgba(0, 0, 0, 0.10));
   color: $text_black;
@@ -48,7 +51,7 @@
   color: $text_black;
   background-color: $bg_white;
   padding: 0.5rem 1rem;
-  width: 8rem;
+  width: 13rem;
   font-weight: bold;
   &:hover {
     @include box($border: 2px solid lighten($color: $border_black, $amount: 70%), $radius: 0);
@@ -61,7 +64,7 @@
   color: $text_black;
   background-color: darken($color: $bg_white, $amount: 15%);
   padding: 0.5rem 1rem;
-  width: 8rem;
+  width: 13rem;
   font-weight: bold;
   cursor: not-allowed;
   &:hover {

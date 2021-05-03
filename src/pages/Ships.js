@@ -23,6 +23,7 @@ const Ships = () => {
   const hasPrev = useSelector((state) => state.ShipReducer.hasPrev);
   const page = useSelector((state) => state.ShipReducer.page);
   const count = useSelector((state) => state.ShipReducer.count);
+  const filterTerm = useSelector((state) => state.GeneralReducer.filterTerm); //fetch filter term from redux
 
   const getStarShips = async (pageNumber = 1) => {
     dispatch(toggleSpaceshipLoading());
@@ -51,6 +52,7 @@ const Ships = () => {
           Starships={Starships}
           getRandomNumber={getRandomNumber}
           isLoadingShips={isLoadingShips}
+          filterTerm={filterTerm}
         />
 
         {starships.length !== 0 && (

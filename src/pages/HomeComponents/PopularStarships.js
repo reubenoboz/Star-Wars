@@ -8,6 +8,7 @@ const PopularStarships = ({
   Starships,
   getRandomNumber,
   isLoadingShips,
+  filterTerm
 }) => {
   return (
     <Fragment>
@@ -21,8 +22,9 @@ const PopularStarships = ({
             <div className="no_data">No Data</div>
           ) : (
             <Fragment>
+              {starships?.filter((term) => term.name.toLowerCase().includes(filterTerm.toLowerCase())).length === 0 && <div className="no_data">No Data</div> }
               <Row gutter={50}>
-                {starships?.map((ship, index) => (
+                {starships?.filter((term) => term.name.toLowerCase().includes(filterTerm.toLowerCase()))?.map((ship, index) => (
                   <Col
                     xs={24}
                     md={12}

@@ -39,6 +39,8 @@ const Home = () => {
   const isLoadingPlanets = useSelector(
     (state) => state.PlanetsReducer.isLoadingPlanets
   );
+  const filterTerm = useSelector((state) => state.GeneralReducer.filterTerm);  //fetch filter term from redux
+  const genderTerm = useSelector((state) => state.GeneralReducer.genderTerm);  //fetch gender filter term from redux
 
   const getCharacters = async () => {
     dispatch(toggleCharacterLoading());
@@ -75,6 +77,7 @@ const Home = () => {
             <span className="title">Popular Starships</span>
           </h1>
           <PopularStarships
+            filterTerm={filterTerm}
             starships={starships.slice(0, 6)}
             Starships={Starships}
             getRandomNumber={getRandomNumber}
@@ -94,6 +97,7 @@ const Home = () => {
           </h1>
 
           <PopularPlanets
+            filterTerm={filterTerm}
             planets={planets.slice(0, 6)}
             Planets={Planets}
             getRandomNumber={getRandomNumber}
@@ -113,10 +117,12 @@ const Home = () => {
           </h1>
 
           <PopularCharacters
+            filterTerm={filterTerm}
             characters={characters.slice(0, 4)}
             Characters={Characters}
             getRandomNumber={getRandomNumber}
             isLoadingCharacters={isLoadingCharacters}
+            genderTerm={genderTerm}
           />
 
           <p className="view_more_btn">

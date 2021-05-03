@@ -8,6 +8,7 @@ const PopularPlanets = ({
   Planets,
   getRandomNumber,
   isLoadingPlanets,
+  filterTerm
 }) => {
   return (
     <Fragment>
@@ -21,8 +22,10 @@ const PopularPlanets = ({
             <div className="no_data">No data</div>
           ) : (
             <Fragment>
+
+{planets?.filter((term) => term.name.toLowerCase().includes(filterTerm.toLowerCase())).length === 0 && <div className="no_data">No data</div>}
               <Row gutter={50}>
-                {planets?.map((planet, index) => (
+                {planets?.filter((term) => term.name.toLowerCase().includes(filterTerm.toLowerCase()))?.map((planet, index) => (
                   <Col
                     xs={24}
                     md={12}
