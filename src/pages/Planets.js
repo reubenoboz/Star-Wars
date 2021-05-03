@@ -30,11 +30,11 @@ const PlanetsHome = () => {
     let res = await GetAllPlanets(pageNumber);
     dispatch(savePlanets(res));
     dispatch(togglePlanetsLoading);
+    dispatch(changePlanetsPageNumber(pageNumber));
   };
 
   const handlePageChange = async (pageNumber) => {
     getPlanets(pageNumber)
-    dispatch(changePlanetsPageNumber(pageNumber));
   };
 
   useEffect(() => {

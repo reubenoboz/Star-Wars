@@ -32,11 +32,11 @@ const CharactersHome = () => {
     let res = await GetAllCharacters(pageNumber);
     dispatch(saveCharacters(res));
     dispatch(toggleCharacterLoading());
+    dispatch(changeCharacterPageNumber(pageNumber));
   };
 
   const handlePageChange = async (pageNumber) => {
     getCharacters(pageNumber);
-    dispatch(changeCharacterPageNumber(pageNumber));
   };
 
   useEffect(() => {

@@ -30,11 +30,11 @@ const Ships = () => {
     let res = await GetAllShips(pageNumber);
     dispatch(saveStarships(res));
     dispatch(toggleSpaceshipLoading());
+    dispatch(changeShipPageNumber(pageNumber))
   };
 
   const handlePageChange = async (pageNumber) => {
     getStarShips(pageNumber)
-    dispatch(changeShipPageNumber(pageNumber))
   }
 
   useEffect(() => {
