@@ -1,4 +1,4 @@
-import {SAVE_PLANETS, TOGGLE_PLANETS_LOADING} from '../actionTypes'
+import {CHANGE_PLANETS_PAGENUMBER, SAVE_PLANETS, TOGGLE_PLANETS_LOADING} from '../actionTypes'
 
 export const savePlanets = (payload) => {
     return {
@@ -11,4 +11,11 @@ export const savePlanets = (payload) => {
       return {
           type: TOGGLE_PLANETS_LOADING
       }
+  }
+
+  export const changePlanetsPageNumber = (payload) => {
+    return {
+      type: CHANGE_PLANETS_PAGENUMBER,
+      payload
+    }
   }

@@ -22,7 +22,7 @@ const PopularCharacters = ({
           ) : (
             <Fragment>
               <Row gutter={50}>
-                {characters.slice(0, 4)?.map((character, index) => (
+                {characters?.map((character, index) => (
                   <Col
                     xs={24}
                     md={12}

@@ -1,40 +1,6 @@
 @import "../assets//scss//variables";
 
 .home {
-  .sub_heading {
-      text-align: center;
-      margin: 3rem 0;
-    .title {
-      text-align: center;
-      text-decoration: none;
-      position: relative;
-      font-weight: bold;
-      &::after {
-        position: absolute;
-        content: "";
-        height: 3px;
-        bottom: -6px;
-
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        width: 50%;
-        background: $border_black;
-
-        /* optional animation */
-        -o-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-      }
-      &:hover::after {
-        width: 80%;
-        background: $border_black;
-      }
-    }
-  }
-
   .loading_container{
     display: flex;
     justify-content: center;

@@ -22,7 +22,7 @@ const PopularStarships = ({
           ) : (
             <Fragment>
               <Row gutter={50}>
-                {starships.slice(0, 6)?.map((ship, index) => (
+                {starships?.map((ship, index) => (
                   <Col
                     xs={24}
                     md={12}

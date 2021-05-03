@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
 import "./Header.scss";
 
@@ -6,7 +7,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo">
+        <NavLink to='/'>
         <img className="header_logo" src={Logo} alt="Star Wars Logo" />
+        </NavLink>
       </div>
       <div className="container">
         <div className="header_heading">

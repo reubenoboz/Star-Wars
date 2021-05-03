@@ -7,6 +7,7 @@
   text-align: center;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -39,5 +40,32 @@
   &:hover {
     @include box($border: 2px solid lighten($color: $border_black, $amount: 70%), $radius: 0);
     background-color: darken($color: $bg_white, $amount: 5%);
+  }
+}
+
+.btn-pagination{
+  @include box($border: 2px solid $border_black, $radius: 0);
+  color: $text_black;
+  background-color: $bg_white;
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  font-weight: bold;
+  &:hover {
+    @include box($border: 2px solid lighten($color: $border_black, $amount: 70%), $radius: 0);
+    background-color: darken($color: $bg_white, $amount: 5%);
+  }
+}
+
+.btn-disabled{
+  @include box($border: 2px solid lighten($color: $border_black, $amount: 70%), $radius: 0);
+  color: $text_black;
+  background-color: darken($color: $bg_white, $amount: 15%);
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  font-weight: bold;
+  cursor: not-allowed;
+  &:hover {
+    @include box($border: 2px solid lighten($color: $border_black, $amount: 70%), $radius: 0);
+    background-color: darken($color: $bg_white, $amount: 15%);
   }
 }

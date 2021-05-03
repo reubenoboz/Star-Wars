@@ -22,7 +22,7 @@ const PopularPlanets = ({
           ) : (
             <Fragment>
               <Row gutter={50}>
-                {planets.slice(0, 6)?.map((planet, index) => (
+                {planets?.map((planet, index) => (
                   <Col
                     xs={24}
                     md={12}
@@ -34,6 +34,7 @@ const PopularPlanets = ({
                       name={planet.name}
                       img={Planets[getRandomNumber(3)]}
                       id={planet.url.split("/")[5]}
+                      population={planet.population}
                     />
                   </Col>
                 ))}

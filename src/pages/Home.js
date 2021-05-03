@@ -1,10 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../components/Layout/Layout";
-import {
-  GetAllCharacters,
-  getSingleCharacter,
-} from "../Network/services/characters";
+import { GetAllCharacters } from "../Network/services/characters";
 import {
   saveCharacters,
   toggleCharacterLoading,
@@ -75,10 +72,10 @@ const Home = () => {
       <div className="home">
         <Fragment>
           <h1 className="sub_heading">
-            <span className="title">Popular Starships {isLoadingShips}</span>
+            <span className="title">Popular Starships</span>
           </h1>
           <PopularStarships
-            starships={starships}
+            starships={starships.slice(0, 6)}
             Starships={Starships}
             getRandomNumber={getRandomNumber}
             isLoadingShips={isLoadingShips}
@@ -97,7 +94,7 @@ const Home = () => {
           </h1>
 
           <PopularPlanets
-            planets={planets}
+            planets={planets.slice(0, 6)}
             Planets={Planets}
             getRandomNumber={getRandomNumber}
             isLoadingPlanets={isLoadingPlanets}
@@ -116,7 +113,7 @@ const Home = () => {
           </h1>
 
           <PopularCharacters
-            characters={characters}
+            characters={characters.slice(0, 4)}
             Characters={Characters}
             getRandomNumber={getRandomNumber}
             isLoadingCharacters={isLoadingCharacters}
