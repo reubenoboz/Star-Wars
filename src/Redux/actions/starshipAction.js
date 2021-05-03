@@ -1,4 +1,4 @@
-import {SAVE_STARSHIPS, TOGGLE_SPACESHIP_LOADING, CHANGE_STARSHIP_PAGENUMBER} from '../actionTypes'
+import {SAVE_STARSHIPS, TOGGLE_SPACESHIP_LOADING, CHANGE_STARSHIP_PAGENUMBER, SAVE_SINGLE_STARSHIPS} from '../actionTypes'
 
 export const saveStarships = (payload) => {
     return {
@@ -16,6 +16,13 @@ export const saveStarships = (payload) => {
   export const changeShipPageNumber = (payload) => {
     return {
       type: CHANGE_STARSHIP_PAGENUMBER,
+      payload
+    }
+  }
+
+  export const saveStarshipDetail = (payload) => {
+    return {
+      type: SAVE_SINGLE_STARSHIPS,
       payload
     }
   }

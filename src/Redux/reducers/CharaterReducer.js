@@ -1,6 +1,7 @@
 import {
   CHANGE_CHARACTER_PAGENUMBER,
   SAVE_CHARACTERS,
+  SAVE_SINGLE_CHARACTER,
   TOGGLE_CHARACTER_LOADING,
 } from "../actionTypes";
 
@@ -12,6 +13,7 @@ const initialState = {
   count: 0,
   hasNext: false,
   hasPrev: false,
+  characterDetails: {}
 };
 
 const CharacterReducer = (state = initialState, action) => {
@@ -34,6 +36,11 @@ const CharacterReducer = (state = initialState, action) => {
       return {
         ...state,
         page: action.payload,
+      };
+      case SAVE_SINGLE_CHARACTER:
+      return {
+        ...state,
+        characterDetails: action.payload,
       };
     default:
       return state;

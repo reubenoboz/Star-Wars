@@ -1,6 +1,7 @@
 import {
   CHANGE_PLANETS_PAGENUMBER,
   SAVE_PLANETS,
+  SAVE_SINGLE_PLANETS,
   TOGGLE_PLANETS_LOADING,
 } from "../actionTypes";
 
@@ -12,6 +13,7 @@ const initialState = {
   count: 0,
   hasNext: false,
   hasPrev: false,
+  planetDetails: {}
 };
 
 const PlanetsReducer = (state = initialState, action) => {
@@ -34,6 +36,11 @@ const PlanetsReducer = (state = initialState, action) => {
       return {
         ...state,
         page: action.payload,
+      };
+      case SAVE_SINGLE_PLANETS:
+      return {
+        ...state,
+        planetDetails: action.payload,
       };
     default:
       return state;
