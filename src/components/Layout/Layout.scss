@@ -1,0 +1,14 @@
+@import '../../assets/scss/variables'; 
+
+.layout{
+
+    .content{
+        padding: 3rem 5rem
+    }
+
+    .footer{
+        height: 4rem;
+        width: 100%;
+        background-color: $bg_grey;
+    }
+}

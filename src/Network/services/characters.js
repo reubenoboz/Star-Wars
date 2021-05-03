@@ -3,10 +3,10 @@ import {charactersApi} from '../apis/characters.api'
 import { appNotification } from '../../components';
 
 //Get All Charaters
-export const GetAllCharacters = async () => {
+export const GetAllCharacters = async (page=1) => { //default page of 1
     try {
       const response = await starWarsAxiosInstance.get(
-        charactersApi.getAllCharacters,
+        `${charactersApi.getAllCharacters}?page=${page}`,
       );
       return response.data;
     } catch (err) {

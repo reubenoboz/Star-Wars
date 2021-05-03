@@ -1,16 +1,24 @@
-import {SAVE_CHARACTERS} from '../actionTypes'
+import {SAVE_STARSHIPS, TOGGLE_SPACESHIP_LOADING} from '../actionTypes'
 
 const initialState = {
-  module: null
+  starShips: [],
+  recentlyViewedShips: [],
+  isLoadingShips: false
 }
 
 const ShipReducer = (state = initialState, action) => {
     switch (action.type) {
-      case SAVE_CHARACTERS:
+      case SAVE_STARSHIPS:
+        let data = action.payload
         return {
           ...state,
-          module: action?.module,
+          starShips: data.results,
         };
+        case TOGGLE_SPACESHIP_LOADING: 
+        return {
+          ...state,
+          isLoadingShips: !state.isLoadingShips
+        }
       default:
         return state;
     }

@@ -1,0 +1,43 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.btn {
+  width: 10rem;
+  padding: 1rem 0;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  @include box($border: 1px solid $btn_primary, $radius: 0);
+  // @include box-shadow(3px 8px 10px 0px rgba(0, 0, 0, 0.10));
+  color: $text_black;
+  background-color: $btn_primary;
+  &:hover {
+    background-color: darken($color: $btn_primary, $amount: 80%);
+    color: $text_white
+  }
+}
+.btn-secondary {
+  @include box($border: 1px solid $btn_secondary, $radius: 0);
+  @include box-shadow(3px 8px 10px 0px rgba(153, 153, 153, 0.10));
+  color: $text_white;
+  background-color: $btn_secondary;
+  &:hover {
+    background-color: lighten($color: $btn_secondary, $amount: 20%);
+  }
+}
+
+.btn-viewMore{
+  @include box($border: 2px solid $border_black, $radius: 0);
+  color: $text_black;
+  background-color: $bg_white;
+  padding: 0.5rem 15rem;
+  width: unset;
+  font-weight: bold;
+  &:hover {
+    @include box($border: 2px solid lighten($color: $border_black, $amount: 70%), $radius: 0);
+    background-color: darken($color: $bg_white, $amount: 5%);
+  }
+}

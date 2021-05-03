@@ -1,0 +1,29 @@
+@import "../../../assets/scss/variables";
+
+.starship_card {
+  .starship_image {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+
+  .starship_card_details {
+    padding: 2rem 1rem 1rem 1rem;
+    .starship_title {
+      font-weight: bold;
+      color: $text_black;
+    }
+
+    .starship_description {
+      color: $text_grey;
+      word-wrap: break-word;
+      height: 6rem;
+      overflow: scroll;
+    }
+
+    .starship_btn {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

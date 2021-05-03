@@ -3,10 +3,10 @@ import {shipsApi} from '../apis/ships.api'
 import { appNotification } from '../../components';
 
 //Get All Ships
-export const GetAllShips = async () => {
+export const GetAllShips = async (page=1) => {  //default page of 1
     try {
       const response = await starWarsAxiosInstance.get(
-        shipsApi.getAllShips,
+        `${shipsApi.getAllShips}?page=${page}`,
       );
       return response.data;
     } catch (err) {

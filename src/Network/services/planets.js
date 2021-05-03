@@ -3,10 +3,10 @@ import {planetsApi} from '../apis/planet.api'
 import { appNotification } from '../../components';
 
 //Get All Planets
-export const GetAllPlanets = async () => {
+export const GetAllPlanets = async (page=1) => { //default page of 1
     try {
       const response = await starWarsAxiosInstance.get(
-        planetsApi.getAllPlanets,
+        `${planetsApi.getAllPlanets}?page=${page}`,
       );
       return response.data;
     } catch (err) {
