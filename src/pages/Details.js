@@ -101,20 +101,6 @@ const Details = () => {
         {param === "characterId" && <img src={Characters[getRandomNumber(4)]} alt='character' />}
         {param === "planetId" && <img src={Planets[getRandomNumber(4)]} alt='planet' />}
         
-        {/* <div>
-          <div>
-            {param === "starShipId" && shipDetails?.name}
-            {param === "characterId" && characterDetail?.name}
-            {param === "planetId" && planetDetails?.name}
-          </div>
-          <div>
-            <Button type="viewMore" icon={<i class="fa fa-chevron-left"></i>} />
-            <Button
-              type="viewMore"
-              icon={<i class="fa fa-chevron-right"></i>}
-            />
-          </div>
-        </div> */}
       </div>
       <div className="details_container">
         <h3>
